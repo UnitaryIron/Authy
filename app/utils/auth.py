@@ -4,20 +4,19 @@ from datetime import datetime, timedelta
 
 pwd_context = CryptContext(schemes=["bcrypt"], deprecated="auto")
 
-# JWT settings
 SECRET_KEY = "your-secret-key-change-in-production"
 ALGORITHM = "HS256"
 ACCESS_TOKEN_EXPIRE_MINUTES = 30
 
+import hashlib
+
 def hash_password(password: str) -> str:
     if len(password.encode('utf-8')) > 72:
-        import hashlib
         password = hashlib.sha256(password.encode('utf-8')).hexdigest()
     return pwd_context.hash(password)
 
 def verify_password(plain_password: str, hashed_password: str) -> bool:
     if len(plain_password.encode('utf-8')) > 72:
-        import hashlib
         plain_password = hashlib.sha256(plain_password.encode('utf-8')).hexdigest()
     return pwd_context.verify(plain_password, hashed_password)
 
