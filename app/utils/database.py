@@ -12,7 +12,7 @@ class Database:
             "id": user_id,
             "email": email,
             "hashed_password": hashed_password,
-            "created_at": "2025-10-16"  # Simplified for now
+            "created_at": "2025-10-18" 
         }
         self.users[user_id] = user
         self.next_id += 1
@@ -27,5 +27,7 @@ class Database:
     def get_user_by_id(self, user_id: int) -> Optional[Dict]:
         return self.users.get(user_id)
 
-# Global database instance
+    def get_user_by_google_id(self, google_id: str):
+        return next((user for user in self.users if user.get("google_id") == google_id), None)
+
 db = Database()
