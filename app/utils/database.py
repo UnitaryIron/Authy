@@ -4,6 +4,19 @@ class Database:
         self.sessions = {}
         self.next_id = 1
 
+class Analytics:
+    def __init__(self):
+        self.auth_events = []
+    
+    def track(self, app_id: str, event_type: str):
+        self.auth_events.append({
+            'app_id': app_id,
+            'event': event_type,
+            'timestamp': datetime.utcnow()
+        })
+
+analytics = Analytics()    
+    
     def get_user_by_email(self, email: str):
         for user in self.users:
             if user["email"] == email:
@@ -36,3 +49,4 @@ class Database:
         return None
 
 db = Database()
+
