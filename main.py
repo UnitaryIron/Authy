@@ -6,6 +6,7 @@ from app.routes.google_oauth import router as google_router
 from dotenv import load_dotenv
 from datetime import datetime
 from fastapi.middleware.cors import CORSMiddleware
+from app.routes.admin import router as admin_router
 from slowapi.errors import RateLimitExceeded
 
 load_dotenv() 
@@ -37,4 +38,4 @@ async def health_check():
         "timestamp": datetime.utcnow().isoformat(),
         "version": "1.0.0"
     }
-
+app.include_router(admin_router, prefix="/admin", tags=["admin"])    
