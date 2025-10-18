@@ -1,22 +1,11 @@
+from datetime import datetime
+
 class Database:
     def __init__(self):
         self.users = []
         self.sessions = {}
         self.next_id = 1
 
-class Analytics:
-    def __init__(self):
-        self.auth_events = []
-    
-    def track(self, app_id: str, event_type: str):
-        self.auth_events.append({
-            'app_id': app_id,
-            'event': event_type,
-            'timestamp': datetime.utcnow()
-        })
-
-analytics = Analytics()    
-    
     def get_user_by_email(self, email: str):
         for user in self.users:
             if user["email"] == email:
@@ -43,10 +32,21 @@ analytics = Analytics()
         return None
 
     def get_user_by_google_id(self, google_id: str):
-        for user in self.users:  # ← And this one
+        for user in self.users:
             if user.get("google_id") == google_id:
                 return user
         return None
 
-db = Database()
+class Analytics:
+    def __init__(self):
+        self.auth_events = []
+    
+    def track(self, app_id: str, event_type: str):
+        self.auth_events.append({
+            'app_id': app_id,
+            'event': event_type,
+            'timestamp': datetime.utcnow().isoformat()
+        })
 
+db = Database()
+analytics = Analytics()
