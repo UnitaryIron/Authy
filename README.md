@@ -341,9 +341,9 @@ MIT License - feel free to use in your personal and commercial projects.
 
 ## Links
 
-- **Live API:** https://logify.onrender.com
-- **Interactive Docs:** https://logify.onrender.com/docs
-- **GitHub Repository:** https://github.com/UnitaryIron/Logify
+- **Live API:** https://logify-cva8.onrender.com
+- **Interactive Docs:** https://logify-cva8.onrender.com/docs
+- **GitHub Repository:** https://github.com/UnitaryIron/Logify-Backend
 - **Developer Portfolio:** https://em-lijo.vercel.app
 
 ## Why Logify?
