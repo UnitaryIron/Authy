@@ -9,7 +9,7 @@ router = APIRouter()
 
 GOOGLE_CLIENT_ID = os.getenv("GOOGLE_CLIENT_ID")
 GOOGLE_CLIENT_SECRET = os.getenv("GOOGLE_CLIENT_SECRET")
-REDIRECT_URI = "https://logify-cva8.onrender.com/auth/google/callback"
+REDIRECT_URI = os.getenv("REDIRECT_URI", "https://logify-cva8.onrender.com/auth/google/callback")
 
 @router.get("/auth/google")
 async def google_oauth():
