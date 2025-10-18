@@ -23,11 +23,7 @@ app.add_middleware(
 
 @app.get("/")
 async def root():
-    return {"message": "Authy API is running!"}
-
-@app.get("/")
-async def root():
-    return {"message": "Authy API is running!"}
+    return {"message": "Logify API is running!"}
     
 @app.get("/health")
 async def health_check():
@@ -41,5 +37,6 @@ if __name__ == "__main__":
     import uvicorn
 
     uvicorn.run(app, host="0.0.0.0", port=8000)
+
 
 
