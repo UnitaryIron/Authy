@@ -1,6 +1,6 @@
 # Logify - Authentication Microservice
 
-**Production-ready auth that saves you 5+ days of development time.** Built by a 15-year-old developer.
+**Production-ready auth that saves you 5+ days of development time.** 
 
 ![FastAPI](https://img.shields.io/badge/FastAPI-005571?style=for-the-badge&logo=fastapi)
 ![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)
@@ -288,7 +288,7 @@ Health check.
 
 ## Contributing
 
-Feedback, ideas, and contributions welcome! This project is built by a 15-year-old developer learning in public.
+Feedback, ideas, and contributions welcome!
 
 ## License
 
