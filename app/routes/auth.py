@@ -50,7 +50,6 @@ async def login(user_data: UserLogin):
                 detail="Invalid credentials"
             )
         
-        # Verify password
         if not verify_password(user_data.password, user["hashed_password"]):
             logger.warning(f"Failed login attempt for: {user_data.email}")
             raise HTTPException(
@@ -81,7 +80,6 @@ async def forgot_password(email: str):
     """
     Initiate password reset process
     """
-    # For now, just return success to avoid revealing if email exists
     return {
         "message": "If the email exists, a reset link has been sent",
         "status": "success"
